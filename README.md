@@ -54,4 +54,9 @@ Currently implemented:
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/0xcds4r/radiation_survival.git
-   cd radiation_survival
+   ```
+
+2. Move the radiation_survival folder to your VoxelCore installation's res/content/ directory:
+```bash
+cp -r radiation_survival /path/to/VoxelCore/res/content/
+```
