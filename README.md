@@ -57,6 +57,6 @@ Currently implemented:
    ```
 
 2. Move the radiation_survival folder to your VoxelCore installation's res/content/ directory:
-  ```bash
-  cp -r radiation_survival /path/to/VoxelCore/res/content/
-  ```
+   ```bash
+   cp -r radiation_survival /path/to/VoxelCore/res/content/
+  
