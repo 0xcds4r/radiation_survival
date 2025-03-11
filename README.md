@@ -1,4 +1,5 @@
 # Radiation Survival Mod
+# Warning: It's demo
 
 ![icon](https://github.com/user-attachments/assets/ca231f7b-1413-45a0-8394-3a1bac27dc03)
 
