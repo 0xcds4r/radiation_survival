@@ -1,5 +1,8 @@
 # Radiation Survival Mod
 
+![icon](https://github.com/user-attachments/assets/ca231f7b-1413-45a0-8394-3a1bac27dc03)
+
+
 *Survive the wasteland. Watch your health. Radiation is your enemy.*
 
 A survival mode extension pack for [VoxelCore](https://github.com/MihailRis/VoxelEngine-Cpp), built on top of [MihailRis/base_survival](https://github.com/MihailRis/base_survival). Introduces radiation mechanics, immersive audio-visual feedback, and enhanced survival gameplay.
