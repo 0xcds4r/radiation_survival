@@ -1,10 +1,23 @@
+--[[
+////////////////////////////////////////////////////////////////////////////////
+//  
+//  FILE:   "gamemodes.lua"
+//  BY:     MihailRis
+//  FOR:    Survival Mod
+//  ON:     11 Mar 2025
+//  WHAT:   Manages game mode switching and player state.
+//          Defines survival and developer modes with respective rules and permissions.
+//
+////////////////////////////////////////////////////////////////////////////////
+]]
+
 local gamemodes = {
     players = {}
 }
 
 function gamemodes.get_player_health(playerid)
     local entity = entities.get(player.get_entity(playerid))
-    return entity:get_component("base_survival:health")
+    return entity:get_component("radiation_survival:health")
 end
 
 function gamemodes.is_dead(playerid)
@@ -38,7 +51,7 @@ function gamemodes.set(playerid, name)
         player.set_noclip(playerid, false)
     end
     gamemode.current = name
-    events.emit("base_survival:gamemodes.set", playerid, name)
+    events.emit("radiation_survival:gamemodes.set", playerid, name)
 end
 
 function gamemodes.exists(name)
@@ -50,7 +63,7 @@ function gamemodes.get(playerid)
         gamemodes.players[playerid] = {
             current=player.is_infinite_items(playerid)
             and "developer" or "survival"}
-        events.emit("base_survival:gamemodes.set", playerid, 
+        events.emit("radiation_survival:gamemodes.set", playerid, 
                     gamemodes.players[playerid].current)
     end
     return gamemodes.players[playerid]

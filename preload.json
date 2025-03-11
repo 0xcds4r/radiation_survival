@@ -2,7 +2,8 @@
     "textures": [
         "gui/health_point",
         "gui/health_point_off",
-        "gui/health_point_half"
+        "gui/health_point_half",
+        "radiation_fog"
     ],
     "sounds": [
         "events/damage",

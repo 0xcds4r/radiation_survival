@@ -1,9 +1,21 @@
+--[[
+////////////////////////////////////////////////////////////////////////////////
+//  
+//  FILE:   "health.lua"
+//  BY:     MihailRis
+//  FOR:    Survival Mod
+//  ON:     11 Mar 2025
+//  WHAT:   Manages player health, damage, and death mechanics.
+//          Handles fall damage, inventory dropping, and health updates.
+//
+////////////////////////////////////////////////////////////////////////////////
+]]
+
 local gamemodes = require "gamemodes"
 local base_util = require "base:util"
 
 local health = SAVED_DATA.health or ARGS.health or ARGS.max_health or 20
 local max_health = SAVED_DATA.max_health or ARGS.max_health or 20
-
 health = math.ceil(health)
 
 function get_health()
@@ -12,7 +24,7 @@ end
 
 function set_health(value)
     health = math.min(math.max(0, value), max_health)
-    events.emit("base_survival:health.set", entity, health)
+    events.emit("radiation_survival:health.set", entity, health)
 end
 
 local function drop_inventory(invid)
@@ -30,8 +42,8 @@ local function drop_inventory(invid)
 end
 
 function die()
-    events.emit("base_survival:death", entity)
-    events.emit("base_survival:player_death", entity:get_player(), true)
+    events.emit("radiation_survival:death", entity)
+    events.emit("radiation_survival:player_death", entity:get_player(), true)
 
     local pid = entity:get_player()
     if not rules.get("keep-inventory") then
@@ -44,7 +56,7 @@ end
 function damage(points)
     local pid = entity:get_player()
     if points > 0 and pid then
-        events.emit("base_survival:player_damage", pid, points)
+        events.emit("radiation_survival:player_damage", pid, points)
     end
     set_health(health - points)
     if health == 0 then

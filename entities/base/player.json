@@ -1,5 +1,5 @@
 {
     "components": [
-        "base_survival:health"
+        "radiation_survival:health"
     ]
 }

@@ -1,3 +1,16 @@
+--[[
+////////////////////////////////////////////////////////////////////////////////
+//  
+//  FILE:   "health_bar.xml.lua"
+//  BY:     MihailRis
+//  FOR:    Survival Mod
+//  ON:     11 Mar 2025
+//  WHAT:   Manages the health bar display.
+//          Updates HUD icons based on player health values (full, half, empty hearts).
+//
+////////////////////////////////////////////////////////////////////////////////
+]]
+
 local survival_hud = require "survival_hud"
 local gamemodes = require "gamemodes"
 

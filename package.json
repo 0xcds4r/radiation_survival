@@ -1,5 +1,8 @@
 {
-    "id": "base_survival",
-    "title": "Base Survival",
-    "description": "Base survival package"
+    "id": "radiation_survival",
+    "title": "Radiation Survival",
+    "version": "1.0-DEMO",
+    "creator": "0xcds4r | MihailRis",
+    "description": "Radiation survival package",
+    "dependencies": ["base"]
 }
