@@ -1,10 +1,10 @@
 --[[
 ////////////////////////////////////////////////////////////////////////////////
 //  
-//  FILE:   "health.lua"
+//  FILE:   "components/health.lua"
 //  BY:     MihailRis
 //  FOR:    Survival Mod
-//  ON:     11 Mar 2025
+//  ON:     16 Mar 2025
 //  WHAT:   Manages player health, damage, and death mechanics.
 //          Handles fall damage, inventory dropping, and health updates.
 //
@@ -13,6 +13,9 @@
 
 local gamemodes = require "gamemodes"
 local base_util = require "base:util"
+
+local player_data = _G.player_data
+local player_uid = nil
 
 local health = SAVED_DATA.health or ARGS.health or ARGS.max_health or 20
 local max_health = SAVED_DATA.max_health or ARGS.max_health or 20

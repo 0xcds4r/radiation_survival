@@ -1,7 +1,7 @@
 {
     "id": "radiation_survival",
     "title": "Radiation Survival",
-    "version": "1.0-DEMO",
+    "version": "1.1-DEMO",
     "creator": "0xcds4r | MihailRis",
     "description": "Radiation survival package",
     "dependencies": ["base"]

@@ -1,18 +1,20 @@
 --[[
 ////////////////////////////////////////////////////////////////////////////////
 //  
-//  FILE:   "hud.lua"
+//  FILE:   "scripts/hud.lua"
 //  BY:     0xcds4r / MihailRis
 //  FOR:    Radiation Survival Mod
-//  ON:     11 Mar 2025
+//  ON:     16 Mar 2025
 //  WHAT:   Handles HUD elements, audio effects, and player death visuals.
 //          Manages health bar, ambient sounds, Geiger counter, and block destruction feedback.
+//          + Now includes experience bar management.
 //
 ////////////////////////////////////////////////////////////////////////////////
 ]]
 
 local gamemodes = require "gamemodes"
 local survival_hud = require "survival_hud"
+local exp_hud = require "exp_hud"
 
 local death_ambient
 local death_ambient2
@@ -24,9 +26,10 @@ function on_hud_open()
     events.on("radiation_survival:gamemodes.set", function(playerid, name)
         if name == "survival" then
             hud.open_permanent("radiation_survival:health_bar")
+            hud.open_permanent("radiation_survival:experience_bar")
             local entity = entities.get(player.get_entity(playerid))
             if not entity then
-                return -- dead
+                return
             end
             local health = entity:get_component("radiation_survival:health")
             survival_hud.set_health(health.get_health())
@@ -38,6 +41,7 @@ function on_hud_open()
             end
         else
             hud.close("radiation_survival:health_bar")
+            hud.close("radiation_survival:experience_bar")
             if ambient_sound ~= nil then
                 audio.stop(ambient_sound)
                 ambient_sound = nil
@@ -130,7 +134,7 @@ function on_hud_open()
             return
         end
         isdead = true
-        
+        exp_hud.on_death()
         hud.close_inventory()
         if just_happened then
             local px, py, pz = player.get_pos(pid)

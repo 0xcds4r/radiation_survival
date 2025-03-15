@@ -1,14 +1,14 @@
 --[[
 ////////////////////////////////////////////////////////////////////////////////
 //  
-//  FILE:   "modules/survival_hud.lua"
-//  BY:     MihailRis
+//  FILE:   "modules/exp_hud.lua"
+//  BY:     0xcds4r
 //  FOR:    Survival Mod
-//  ON:     11 Mar 2025
+//  ON:     16 Mar 2025
 //
 ////////////////////////////////////////////////////////////////////////////////
 ]]
 
 
-local survival_hud = {}
-return survival_hud
+local exp_hud = {}
+return exp_hud

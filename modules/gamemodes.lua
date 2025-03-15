@@ -1,7 +1,7 @@
 --[[
 ////////////////////////////////////////////////////////////////////////////////
 //  
-//  FILE:   "gamemodes.lua"
+//  FILE:   "modules/gamemodes.lua"
 //  BY:     MihailRis
 //  FOR:    Survival Mod
 //  ON:     11 Mar 2025

@@ -1,0 +1,15 @@
+<panel id="exp_panel" pos="10,10" size="250,20" orientation="horizontal">
+    <trackbar 
+        id="experience_bar" 
+        size="200,20" 
+        min="0" 
+        max="100" 
+        value="0" 
+    />
+    <label 
+        id="level_label" 
+        size="40,20" 
+        text="Lv 1" 
+        text-align="center" 
+    />
+</panel>
