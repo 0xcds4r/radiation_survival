@@ -30,6 +30,10 @@ Currently implemented:
 - **Health System**:
   - Fall damage based on impact force.
   - Death with inventory drop (configurable via `keep-inventory` rule).
+- **Experience System (Test)**:
+  - Tracks player experience points earned by breaking blocks (10 XP per block by default).
+  - Levels up when experience reaches the maximum threshold (max_experience), increasing the level and resetting experience to 0 with a new, higher max_experience (scaled by a growth factor of 1.5).
+  - Resets experience to 0, level to 1, and max_experience to 100 upon player death, updating the HUD accordingly.
 - **Radiation Mechanics**:
   - Radiation levels increase with altitude (0 at y<50, 100 at y>100).
   - Visual 3D text displaying current radiation level.
